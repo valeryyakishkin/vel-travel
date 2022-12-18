@@ -1,0 +1,25 @@
+.sub-navigation {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 28px 0;
+  }
+  
+  .sub-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sub-navigation ul li a {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    text-decoration: none;
+  }
+  
+  .sub-navigation ul li a:hover {
+    text-decoration: underline;
+  }
