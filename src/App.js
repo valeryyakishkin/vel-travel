@@ -111,7 +111,7 @@ export class App extends core.Component {
                 <travel-route path="${appRoutes.guides}" component="guides-page" title="Guides"></travel-route>
                 <travel-route path="${appRoutes.signUp}" component="sign-up-page" title="Sign Up"></travel-route>
                 <travel-route path="${appRoutes.signIn}" component="sign-in-page" title="Sign In"></travel-route>
-                <travel-route path="${appRoutes.admin}" component="admin-page" title="Admin"></travel-route>
+                <private-route path="${appRoutes.admin}" component="admin-page" title="Admin"></private-route>
                 <travel-route path="${appRoutes.packageDetails}/:id" component="package-details" title="Package Details"></travel-route>
                 <travel-route path="${appRoutes.errorPage}" component="error-page" title="Not Found"></travel-route>
                 <travel-outlet></travel-outlet>

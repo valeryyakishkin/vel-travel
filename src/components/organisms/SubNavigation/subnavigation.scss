@@ -20,6 +20,9 @@
     line-height: 24px;
     text-decoration: none;
     text-transform: uppercase;
+    &.active {
+      color: black;
+    }
   }
   
   .sub-navigation ul li a:hover {
