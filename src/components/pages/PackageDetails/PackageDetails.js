@@ -1,6 +1,6 @@
 import { Component } from "../../../core";
 import { databaseService } from "../../../services";
-import '../../atoms';
+import "../../atoms";
 
 export class PackageDetails extends Component {
   constructor() {
@@ -22,7 +22,7 @@ export class PackageDetails extends Component {
         isLoading: !state.isLoading,
       };
     });
-  };
+  }
 
   getDestination = () => {
     this.toggleIsLoading();
@@ -41,6 +41,14 @@ export class PackageDetails extends Component {
       });
   };
 
+  showStars = () => {
+    let result = "";
+    for (let i = 1; i <= Number(this.state.destination.rating); i++) {
+      result += `<i class="fa fa-star text-primary mr-1"></i>`;
+    }
+    return result;
+  };
+
   componentDidMount() {
     this.getDestination();
   }
@@ -49,12 +57,14 @@ export class PackageDetails extends Component {
     return `
       ${
         !this.state.destination
-          ? `<travel-preloader is-loading="${this.state.isLoading}"></travel-preloader>` 
+          ? `<travel-preloader is-loading="${this.state.isLoading}"></travel-preloader>`
           : `
           <div class="container-fluid">
             <div class="row mt-5 flex-column">
               <div class="col-sm-6 col-md-8">
-                <img src="${this.state.destination.poster}" class="col-md-12 col-sm-12" />
+                <img src="${
+                  this.state.destination.poster
+                }" class="col-md-12 col-sm-12" />
               </div>
               <div class="col-sm-6 col-md-8">
                 <table class="table table-white table-striped">
@@ -68,7 +78,7 @@ export class PackageDetails extends Component {
                   </tr>
                   <tr>
                     <td>Rating</td>
-                    <td><h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>${this.state.destination.rating}</h6></td>
+                    <td><h6 class="m-0">${this.showStars()}</h6></td>
                   </tr>
                 </table>
               </div>
@@ -77,7 +87,8 @@ export class PackageDetails extends Component {
               <p>${this.state.destination.description}</p>
             </div>
           </div>
-      `}
+      `
+      }
     `;
   }
 }

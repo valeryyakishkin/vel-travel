@@ -82,7 +82,7 @@ export class AdminPage extends core.Component {
                     </div>
                     <div class="control-group my-3">
                       <label class="form-label">Travel rating:</label>
-                      <input type="range" class="form-range p-4" name="rating" min="0" max="5" step="1">
+                      <input type="range" class="form-range p-4" name="rating" min="1" max="5" step="1">
                     </div>
                     <div class="control-group my-3">
                       <label class="form-label">Upload a poster:</label>
