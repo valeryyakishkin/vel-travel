@@ -78,7 +78,7 @@ export class AdminPage extends core.Component {
                     </div>
                     <div class="control-group my-3">
                       <label class="form-label">Price, $:</label>
-                      <input type="number" class="form-range p-4" name="price" placeholder="Price">
+                      <input type="number" class="form-control p-4" name="price" placeholder="Price">
                     </div>
                     <div class="control-group my-3">
                       <label class="form-label">Travel rating:</label>
