@@ -1,3 +1,4 @@
+import { appCountries } from "../../../constants";
 import * as core from "../../../core";
 import {
   databaseService,
@@ -92,12 +93,9 @@ export class AdminPage extends core.Component {
                       <label class="form-label">Choose a country:</label>
                       <br>
                       <select class="form-select" name="country">
-                        <option selected value="United Kingdom">United Kingdom</option>
-                        <option value="Unuted States">United States</option>
-                        <option value="Australia">Australia</option>
-                        <option value="India">India</option>
-                        <option value="South Africa">South Africa</option>
-                        <option value="Indonesia">Indonesia</option>
+                        ${appCountries.map((item) => {
+                          return `<option value="${item.value}">${item.label}</option>`;
+                        }).join(' ')}
                       </select>
                     </div>
                     <div class="control-group my-3">
