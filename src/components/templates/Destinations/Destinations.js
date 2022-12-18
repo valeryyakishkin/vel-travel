@@ -2,7 +2,7 @@ import { Component } from "../../../core";
 import { databaseService } from "../../../services";
 import "../../organisms";
 
-export class Package extends Component {
+export class Destinations extends Component {
   constructor() {
     super();
     this.state = {
@@ -47,8 +47,8 @@ export class Package extends Component {
         <div class="container-fluid py-5">
             <div class="container pt-5 pb-3">
                 <div class="text-center mb-3 pb-3">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Packages</h6>
-                    <h1>Perfect Tour Packages</h1>
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destinations</h6>
+                    <h1>Perfect Tour Destinations</h1>
                 </div>
                 <div class="row" style="box-sizing: border-box;">
                     ${
@@ -96,4 +96,4 @@ export class Package extends Component {
   }
 }
 
-customElements.define("travel-package", Package);
+customElements.define("travel-destinations", Destinations);

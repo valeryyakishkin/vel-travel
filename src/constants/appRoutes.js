@@ -2,7 +2,7 @@ export const appRoutes = {
   home: "/",
   about: "/about",
   services: "/services",
-  packages: "/packages",
+  destinations: "/destinations",
   guides: "/guides",
   signUp: "/signUp",
   admin: "/admin",

@@ -107,7 +107,7 @@ export class App extends core.Component {
                 <travel-route path="${appRoutes.home}" component="home-page" title="Home"></travel-route>
                 <travel-route path="${appRoutes.about}" component="about-page" title="About"></travel-route>
                 <travel-route path="${appRoutes.services}" component="services-page" title="Services"></travel-route>
-                <travel-route path="${appRoutes.packages}" component="packages-page" title="Packages"></travel-route>
+                <travel-route path="${appRoutes.destinations}" component="destinations-page" title="Destinations"></travel-route>
                 <travel-route path="${appRoutes.guides}" component="guides-page" title="Guides"></travel-route>
                 <travel-route path="${appRoutes.signUp}" component="sign-up-page" title="Sign Up"></travel-route>
                 <travel-route path="${appRoutes.signIn}" component="sign-in-page" title="Sign In"></travel-route>

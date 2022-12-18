@@ -8,7 +8,7 @@ export * from "./About";
 export * from "./Feature";
 export * from "./Destination";
 export * from './Service';
-export * from './Package';
+export * from './Destinations';
 export * from './Registration';
 export * from './Guides';
 export * from './Footer';

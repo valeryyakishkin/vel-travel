@@ -95,10 +95,10 @@ export class Navbar extends core.Component {
                                       appRoutes.services
                                     )}">Services</span>
                                 </travel-link>
-                                <travel-link to="${appRoutes.packages}">
+                                <travel-link to="${appRoutes.destinations}">
                                     <span class="nav-item nav-link ${this.isActiveLink(
-                                      appRoutes.packages
-                                    )}">Packages</span>
+                                      appRoutes.destinations
+                                    )}">Destinations</span>
                                 </travel-link>
                                 <travel-link to="${appRoutes.guides}">
                                     <span class="nav-item nav-link ${this.isActiveLink(
