@@ -11,7 +11,7 @@ export class HomePage extends Component {
             <travel-about></travel-about>
             <travel-feature></travel-feature>
             <travel-service></travel-service>
-            <travel-package></travel-package>
+            <travel-destinations></travel-destinations>
             <travel-guides></travel-guides>
         `
     }

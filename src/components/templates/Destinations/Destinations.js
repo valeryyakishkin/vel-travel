@@ -50,7 +50,6 @@ export class Destinations extends Component {
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destinations</h6>
                     <h1>Perfect Tour Destinations</h1>
                 </div>
-                <travel-subnavigation></travel-subnavigation>
                 <div class="row">
                     ${
                       this.state.destinations.length > 0

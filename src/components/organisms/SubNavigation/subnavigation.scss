@@ -2,7 +2,8 @@
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
-    padding: 28px 0;
+    flex-wrap: wrap;
+    padding: 14px 0 28px 0;
   }
   
   .sub-navigation ul {
@@ -18,6 +19,7 @@
     font-weight: bold;
     line-height: 24px;
     text-decoration: none;
+    text-transform: uppercase;
   }
   
   .sub-navigation ul li a:hover {

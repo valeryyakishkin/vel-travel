@@ -1,5 +1,9 @@
 export const appCountries = [
     {
+        label: 'All',
+        value: 'all',
+    },
+    {
         label: 'United Kingdom',
         value: 'united-kingdom',
     },
