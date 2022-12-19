@@ -1,14 +1,14 @@
 import { Component } from "../../../core";
+import "bootstrap/js/dist/carousel";
+import "./carousel.scss";
 
 export class Carousel extends Component {
-
-
-    render() {
-        return `
+  render() {
+    return `
             <div class="container-fluid p-0">
-                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item">
+                        <div class="carousel-item active" data-bs-interval="10000">
                             <img class="w-100" src="../../../assets/images/carousel-1.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 900px;">
@@ -18,7 +18,7 @@ export class Carousel extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item active">
+                        <div class="carousel-item" data-bs-interval="20000">
                             <img class="w-100" src="../../../assets/images/carousel-2.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 900px;">
@@ -29,20 +29,20 @@ export class Carousel extends Component {
                             </div>
                         </div>
                     </div>
-                    <a href="#header-carousel" class="carousel-control-prev" data-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                         <div class="btn btn-dark" style="width: 45px; height: 45px; border-radius: 50%;">
                             <span class="carousel-control-prev-icon mb-n2"></span>
                         </div>
-                    </a>
-                    <a href="#header-carousel" class="carousel-control-next" data-slide="next">
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
                         <div class="btn btn-dark" style="width: 45px; height: 45px; border-radius: 50%;">
                             <span class="carousel-control-next-icon mb-n2"></span>
                         </div>
-                    </a>
+                    </button>
                 </div>
             </div>
         `;
-    }
+  }
 }
 
-customElements.define('travel-carousel', Carousel);
+customElements.define("travel-carousel", Carousel);
