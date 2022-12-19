@@ -1,12 +1,12 @@
 import { appRoutes, appEvents } from "../../../constants";
 import * as core from "../../../core";
 import { eventBus } from "../../../core";
+import "bootstrap/js/dist/collapse";
 
 export class Navbar extends core.Component {
   constructor() {
     super();
     this.state = {
-      isShowed: false,
       activePath: window.location.pathname,
     };
   }
@@ -15,27 +15,11 @@ export class Navbar extends core.Component {
     return ["is-logged"];
   }
 
-  onClick = (evt) => {
-    if (evt.target.closest(".navbar-toggler")) {
-      this.onShowNaviation();
-    }
+  onSignOut = (evt) => {
     if (evt.target.closest(".sign-out-link")) {
       evt.preventDefault();
-      this.onSignOut();
+      eventBus.emit(appEvents.userLoggedOut);
     }
-  };
-
-  onShowNaviation = () => {
-    this.setState((state) => {
-      return {
-        ...state,
-        isShowed: !this.state.isShowed,
-      };
-    });
-  };
-
-  onSignOut = () => {
-    eventBus.emit(appEvents.userLoggedOut);
   };
 
   onChangeRoute = (evt) => {
@@ -53,12 +37,12 @@ export class Navbar extends core.Component {
 
   componentDidMount() {
     eventBus.on(appEvents.changeRoute, this.onChangeRoute);
-    this.addEventListener("click", this.onClick);
+    this.addEventListener("click", this.onSignOut);
   }
 
   componentWillUnmount() {
     eventBus.off(appEvents.changeRoute, this.onChangeRoute);
-    this.removeEventListener("click", this.onClick);
+    this.removeEventListener("click", this.onSignOut);
   }
 
   render() {
@@ -71,14 +55,10 @@ export class Navbar extends core.Component {
                         }" class="navbar-brand">
                             <h1 class="m-2 text-primary">VEL<span class="text-dark">TRAVEL</span></h1>
                         </travel-link>
-                        <button type="button" class="navbar-toggler ${
-                          !this.state.isShowed ? "collapsed" : ""
-                        }" data-toggle="collapse" data-target="#navbarCollapse">
+                        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="navbar-collapse justify-content-between px-3 collapse ${
-                          this.state.isShowed ? "show" : ""
-                        }" id="navbarCollapse">
+                        <div class="navbar-collapse justify-content-between px-3 collapse" id="navbarNav">
                             <div class="navbar-nav ml-auto py-0">
                                 <travel-link to="${appRoutes.home}">
                                     <span class="nav-item nav-link ${this.isActiveLink(
