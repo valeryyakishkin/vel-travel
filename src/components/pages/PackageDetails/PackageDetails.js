@@ -61,12 +61,12 @@ export class PackageDetails extends Component {
           : `
           <div class="container-fluid">
             <div class="row mt-5 flex-column">
-              <div class="col-sm-6 col-md-8">
+              <div class="col-sm-8 col-md-10">
                 <img src="${
                   this.state.destination.poster
-                }" class="col-md-12 col-sm-12" />
+                }" class="col-md-10 col-sm-12" />
               </div>
-              <div class="col-sm-6 col-md-8">
+              <div class="col-sm-8 col-md-10">
                 <table class="table table-white table-striped">
                   <tr>
                     <td>Name</td>
@@ -78,13 +78,13 @@ export class PackageDetails extends Component {
                   </tr>
                   <tr>
                     <td>Rating</td>
-                    <td><h6 class="m-0">${this.showStars()}</h6></td>
+                    <td>${this.showStars()}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">${this.state.destination.description}</td>
                   </tr>
                 </table>
               </div>
-            </div>
-            <div class="mt-5">
-              <p>${this.state.destination.description}</p>
             </div>
           </div>
       `
