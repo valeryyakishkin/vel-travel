@@ -12,23 +12,23 @@ export class Service extends Component {
                     <div class="row">
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="service-item bg-white text-center mb-2 py-5 px-4">
-                                <i class="fa fa-2x fa-route mx-auto mb-4"></i>
-                                <h5 class="mb-2">Travel Guide</h5>
-                                <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
+                                <i class="fa fa-2x fa-ticket-alt mx-auto mb-4"></i>
+                                <h5 class="mb-2">Ticket Booking</h5>
+                                <p class="m-0">You fill out the proposed form, where you indicate the route, date and time of departure and the cost of tickets - and your reservation is ready!</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="service-item bg-white text-center mb-2 py-5 px-4">
-                                <i class="fa fa-2x fa-ticket-alt mx-auto mb-4"></i>
-                                <h5 class="mb-2">Ticket Booking</h5>
-                                <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
+                                <i class="fa fa-2x fa-route mx-auto mb-4"></i>
+                                <h5 class="mb-2">Travel Guide</h5>
+                                <p class="m-0">Travel guides will help you discover interesting places around the world to see, eat or shop</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="service-item bg-white text-center mb-2 py-5 px-4">
                                 <i class="fa fa-2x fa-hotel mx-auto mb-4"></i>
                                 <h5 class="mb-2">Hotel Booking</h5>
-                                <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
+                                <p class="m-0">When booking a hotel room directly, you do not need to make an advance payment. The exception is peak dates, such as New Year's or May holidays</p>
                             </div>
                         </div>
                     </div>

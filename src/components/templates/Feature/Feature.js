@@ -13,7 +13,7 @@ export class Feature extends Component {
                                 </div>
                                 <div class="d-flex flex-column">
                                     <h5 class="">Competitive Pricing</h5>
-                                    <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
+                                    <p class="m-0">A strategy that helps a business attract more customers through price optimization</p>
                                 </div>
                             </div>
                         </div>
@@ -24,7 +24,7 @@ export class Feature extends Component {
                                 </div>
                                 <div class="d-flex flex-column">
                                     <h5 class="">Best Services</h5>
-                                    <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
+                                    <p class="m-0">In modern conditions, the service sector is the engine of economic growth</p>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@ export class Feature extends Component {
                                 </div>
                                 <div class="d-flex flex-column">
                                     <h5 class="">Worldwide Coverage</h5>
-                                    <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
+                                    <p class="m-0">We focus on a potential audience in order to attract as many satisfied customers as possible</p>
                                 </div>
                             </div>
                         </div>
