@@ -15,7 +15,7 @@ export class Destination extends Component {
                                 <img class="img-fluid" src="../../../assets/images/destination-1.jpg" alt="">
                                 <a class="destination-overlay text-white text-decoration-none" href="">
                                     <h5 class="text-white">United States</h5>
-                                    <span>100 Cities</span>
+                                    <span>Valley of Fire</span>
                                 </a>
                             </div>
                         </div>
@@ -24,7 +24,7 @@ export class Destination extends Component {
                                 <img class="img-fluid" src="../../../assets/images//destination-2.jpg" alt="">
                                 <a class="destination-overlay text-white text-decoration-none" href="">
                                     <h5 class="text-white">United Kingdom</h5>
-                                    <span>100 Cities</span>
+                                    <span>Fairy Pools on the Isle of Skye</span>
                                 </a>
                             </div>
                         </div>
@@ -33,7 +33,7 @@ export class Destination extends Component {
                                 <img class="img-fluid" src="../../../assets/images/destination-3.jpg" alt="">
                                 <a class="destination-overlay text-white text-decoration-none" href="">
                                     <h5 class="text-white">Australia</h5>
-                                    <span>100 Cities</span>
+                                    <span>Waitomo Caves</span>
                                 </a>
                             </div>
                         </div>
@@ -42,7 +42,7 @@ export class Destination extends Component {
                                 <img class="img-fluid" src="../../../assets/images/destination-4.jpg" alt="">
                                 <a class="destination-overlay text-white text-decoration-none" href="">
                                     <h5 class="text-white">India</h5>
-                                    <span>100 Cities</span>
+                                    <span>Taj Mahal</span>
                                 </a>
                             </div>
                         </div>
@@ -51,7 +51,7 @@ export class Destination extends Component {
                                 <img class="img-fluid" src="../../../assets/images/destination-5.jpg" alt="">
                                 <a class="destination-overlay text-white text-decoration-none" href="">
                                     <h5 class="text-white">South Africa</h5>
-                                    <span>100 Cities</span>
+                                    <span>Hidden Beach</span>
                                 </a>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ export class Destination extends Component {
                                 <img class="img-fluid" src="../../../assets/images/destination-6.jpg" alt="">
                                 <a class="destination-overlay text-white text-decoration-none" href="">
                                     <h5 class="text-white">Indonesia</h5>
-                                    <span>100 Cities</span>
+                                    <span>Toba Lake</span>
                                 </a>
                             </div>
                         </div>

@@ -7,7 +7,6 @@ export class HomePage extends Component {
     render() {
         return `
             <travel-carousel></travel-carousel>
-            <travel-booking></travel-booking>
             <travel-about></travel-about>
             <travel-feature></travel-feature>
             <travel-service></travel-service>

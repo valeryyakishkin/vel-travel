@@ -22,8 +22,8 @@ export class Guides extends Component {
                                     </div>
                                 </div>
                                 <div class="text-center py-4">
-                                    <h5 class="text-truncate">Guide Name</h5>
-                                    <p class="m-0">Designation</p>
+                                    <h5 class="text-truncate">Sherry Taylor</h5>
+                                    <p class="m-0">Guide</p>
                                 </div>
                             </div>
                         </div>
@@ -39,8 +39,8 @@ export class Guides extends Component {
                                     </div>
                                 </div>
                                 <div class="text-center py-4">
-                                    <h5 class="text-truncate">Guide Name</h5>
-                                    <p class="m-0">Designation</p>
+                                    <h5 class="text-truncate">Brandon Jackson</h5>
+                                    <p class="m-0">Guide</p>
                                 </div>
                             </div>
                         </div>
@@ -56,8 +56,8 @@ export class Guides extends Component {
                                     </div>
                                 </div>
                                 <div class="text-center py-4">
-                                    <h5 class="text-truncate">Guide Name</h5>
-                                    <p class="m-0">Designation</p>
+                                    <h5 class="text-truncate">Cindy Brown</h5>
+                                    <p class="m-0">Guide</p>
                                 </div>
                             </div>
                         </div>
@@ -73,8 +73,8 @@ export class Guides extends Component {
                                     </div>
                                 </div>
                                 <div class="text-center py-4">
-                                    <h5 class="text-truncate">Guide Name</h5>
-                                    <p class="m-0">Designation</p>
+                                    <h5 class="text-truncate">Robert Davis</h5>
+                                    <p class="m-0">Guide</p>
                                 </div>
                             </div>
                         </div>
