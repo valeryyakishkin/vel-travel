@@ -1,6 +1,7 @@
-import { Component } from "../../../core";
+import * as core from "../../../core";
+import { appRoutes } from "../../../constants";
 
-export class About extends Component {
+export class About extends core.Component {
 
     render() {
         return `
@@ -26,7 +27,9 @@ export class About extends Component {
                                         <img class="img-fluid" src="../../../assets/images/about-2.jpg" alt="">
                                     </div>
                                 </div>
-                                <a class="btn btn-primary mt-1" href="">Book Now</a>
+                                <travel-link to="${appRoutes.destinations}">
+                                    <span class="btn btn-primary mt-1">Book Now</span>
+                                </travel-link>
                             </div>
                         </div>
                     </div>

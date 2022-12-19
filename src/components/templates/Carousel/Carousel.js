@@ -1,8 +1,9 @@
-import { Component } from "../../../core";
+import * as core from "../../../core";
 import "bootstrap/js/dist/carousel";
 import "./carousel.scss";
+import { appRoutes } from "../../../constants";
 
-export class Carousel extends Component {
+export class Carousel extends core.Component {
   render() {
     return `
             <div class="container-fluid p-0">
@@ -14,7 +15,9 @@ export class Carousel extends Component {
                                 <div class="p-3" style="max-width: 900px;">
                                     <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
                                     <h1 class="display-3 text-white mb-md-4">Let's Discover The World Together</h1>
-                                    <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                                    <travel-link to="${appRoutes.destinations}">
+                                        <span class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</span>
+                                    </travel-link>
                                 </div>
                             </div>
                         </div>
@@ -24,7 +27,9 @@ export class Carousel extends Component {
                                 <div class="p-3" style="max-width: 900px;">
                                     <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
                                     <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
-                                    <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                                    <travel-link to="${appRoutes.destinations}">
+                                        <span class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</span>
+                                    </travel-link>
                                 </div>
                             </div>
                         </div>
