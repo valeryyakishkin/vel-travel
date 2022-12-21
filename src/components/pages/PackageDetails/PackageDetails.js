@@ -64,9 +64,11 @@ export class PackageDetails extends Component {
               <div class="col-12">
                 <table class="table table-white">
                   <tr>
-                    <td colspan="2" class="text-center"><img src="${
-                      this.state.destination.poster
-                    }" class="col-md-10 col-sm-12" /></td>
+                    <td colspan="2" class="text-center">
+                      <img src="${
+                        this.state.destination.poster
+                      }" class="col-lg-6 col-md-8 col-sm-12" />
+                    </td>
                   </tr>
                   <tr>
                     <td>Name:</td>
@@ -84,6 +86,9 @@ export class PackageDetails extends Component {
                     <td colspan="2">${this.state.destination.description}</td>
                   </tr>
                 </table>
+                <div class="d-flex justify-content-center">
+                  <span class="btn btn-primary mt-1 mb-5 text-md-center">Book Now</span>
+                </div>
               </div>
             </div>
           </div>
