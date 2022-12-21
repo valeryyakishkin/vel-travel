@@ -36,9 +36,6 @@ export class Footer extends Component {
                     <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
                         <p class="m-0 text-white-50">Copyright &copy; <a href="#">Domain</a>. All Rights Reserved.</p>
                     </div>
-                    <div class="col-lg-6 text-center text-md-right">
-                        <p class="m-0 text-white-50">Designed by <a href="">HTML Codex</a></p>
-                    </div>
                 </div>
             </div>
         `

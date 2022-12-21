@@ -6,7 +6,6 @@ export * from "./Header";
 export * from "./SignIn";
 export * from "./About";
 export * from "./Feature";
-export * from "./Destination";
 export * from './Service';
 export * from './Destinations';
 export * from './Registration';

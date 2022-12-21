@@ -7,7 +7,7 @@ export class ServicesPage extends Component {
         return `
             <travel-header></travel-header>
             <travel-service></travel-service>
-            <travel-destination></travel-destination>
+            <travel-feature></travel-feature>
         `
     }
 }
