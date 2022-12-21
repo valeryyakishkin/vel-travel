@@ -1,5 +1,5 @@
 import { Component } from "../../../core";
-import { databaseService } from "../../../services";
+import { authService, databaseService } from "../../../services";
 import "../../atoms";
 
 export class PackageDetails extends Component {
@@ -86,9 +86,14 @@ export class PackageDetails extends Component {
                     <td colspan="2">${this.state.destination.description}</td>
                   </tr>
                 </table>
-                <div class="d-flex justify-content-center">
-                  <span class="btn btn-primary mt-1 mb-5 text-md-center">Book Now</span>
-                </div>
+                <form class="mb-5">
+                  <input type="text" name="title" value="${this.state.destination.title}" style="display: none;">
+                  <input type="text" name="country" value="${this.state.destination.country}" style="display: none;">
+                  <input type="email" name="email" value="${this.state.destination.country}" style="display: none;">
+                  <input>
+                  <button type="button" class="btn btn-secondary btn-lg mx-2">Back to destinations</button>
+                  <button type="sumbit" class="btn btn-primary btn-lg mx-2">Book now</button>
+                </form>
               </div>
             </div>
           </div>
