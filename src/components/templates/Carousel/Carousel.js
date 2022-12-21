@@ -6,7 +6,7 @@ import { appRoutes } from "../../../constants";
 export class Carousel extends core.Component {
   render() {
     return `
-            <div class="container-fluid p-0">
+            <div class="container-fluid p-0 position-relative" style="top: -50px;">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="10000">
