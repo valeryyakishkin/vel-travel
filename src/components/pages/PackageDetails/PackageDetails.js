@@ -1,10 +1,10 @@
-import { appEvents } from "../../../constants";
+import { appEvents, appRoutes } from "../../../constants";
 import * as core from "../../../core";
 import { eventBus } from "../../../core";
 import { databaseService } from "../../../services";
+import { initialFieldsState } from "./initialState";
 import "../../atoms";
 import "../../molecules";
-import { initialFieldsState } from "./initialState";
 
 export class PackageDetails extends core.Component {
   constructor() {
@@ -191,7 +191,9 @@ export class PackageDetails extends core.Component {
                     </div>
                     <div class="col-6 d-flex justify-content-around">
                       <button type="sumbit" class="btn btn-primary btn-lg mr-2 p-2">Book now</button>
-                      <button type="button" class="btn btn-secondary btn-lg p-2 mr-2">Back to destinations</button>
+                      <button type="button" class="btn btn-secondary btn-lg p-2 mr-2">
+                        <travel-link to="${appRoutes.destinations}">Back to destinations</travel-link>
+                      </button>
                     </div>
                   </form>
                 </travel-preloader>
