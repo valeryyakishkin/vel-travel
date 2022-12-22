@@ -51,6 +51,10 @@ export class AdminPage extends core.Component {
     this.addEventListener("submit", this.form.handleSubmit(this.createDestination));
   }
 
+  componentWillUnmount() {
+    this.removeEventListener("submit", this.form.handleSubmit(this.createDestination));
+  }
+
   render() {
     return `
       <travel-preloader is-loading="${this.state.isLoading}">
