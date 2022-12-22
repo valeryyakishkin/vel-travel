@@ -1,7 +1,6 @@
 export * from "./Topbar";
 export * from "./Navbar";
 export * from "./Carousel";
-export * from "./Booking";
 export * from "./Header";
 export * from "./SignIn";
 export * from "./About";
