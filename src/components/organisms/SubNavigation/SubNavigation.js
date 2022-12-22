@@ -1,34 +1,54 @@
-import { appCountries } from "../../../constants";
-import { Component } from "../../../core";
-import './subnavigation.scss';
+import { appCountries, appEvents } from "../../../constants";
+import { Component, eventBus } from "../../../core";
+import "./subnavigation.scss";
 
 export class SubNavigation extends Component {
-    
-    constructor() {
-        super();
-        this.state = {
-            activeCountry: appCountries[0].value,
-        }
-    }
+  constructor() {
+    super();
+    this.state = {
+      activeCountry: appCountries[0].value,
+    };
+  }
 
-    render() {
-        return `
+  onChangeCountry = (evt) => {
+    if (evt.target.closest(".country")) {
+      this.setState((state) => {
+        return {
+          ...state,
+          activeCountry: evt.target.getAttribute("data-country"),
+        };
+      });
+      eventBus.emit(appEvents.changeCountry, evt.target.getAttribute("data-country"));
+    }
+  };
+
+  componentDidMount() {
+    this.addEventListener("click", this.onChangeCountry);
+  }
+
+  componentWillUnmount() {
+    this.removeEventListener("click", this.onChangeCountry);
+  }
+
+  render() {
+    return `
             <div class="sub-navigation row">
                 <ul>
-                    ${appCountries.map((item) => {
-                        const isActive = this.state.activeCountry === item.value ? 'active' : '';
+                    ${appCountries
+                      .map((item) => {
                         return `
                             <li>
-                                <a href="#" class="${isActive}" data-country="${item.value}">
+                                <a href="#" class="country" data-country="${item.value}">
                                     ${item.label}
                                 </a>
                             </li>
                         `;
-                    }).join(' ')}
+                      })
+                      .join(" ")}
                 </ul>
             </div>
         `;
-    }
+  }
 }
 
-customElements.define('travel-subnavigation', SubNavigation);
+customElements.define("travel-subnavigation", SubNavigation);

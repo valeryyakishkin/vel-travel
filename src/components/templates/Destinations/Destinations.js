@@ -1,4 +1,5 @@
-import { Component } from "../../../core";
+import { appCountries, appEvents } from "../../../constants";
+import { Component, eventBus } from "../../../core";
 import { databaseService } from "../../../services";
 import "../../organisms";
 
@@ -9,6 +10,7 @@ export class Destinations extends Component {
       isLoading: false,
       isShowedAll: false,
       destinations: [],
+      activeCountry: appCountries[0].value,
     };
   }
 
@@ -50,13 +52,24 @@ export class Destinations extends Component {
     }
   };
 
+  onChangeCountry = (data) => {
+    this.setState((state) => {
+      return {
+        ...state,
+        activeCountry: data.detail,
+      }
+    })
+  }
+
   componentDidMount() {
     this.getDestinations();
     this.addEventListener("click", this.onShowAll);
+    eventBus.on(appEvents.changeCountry, this.onChangeCountry);
   }
 
   componentWillUnmount() {
     this.removeEventListener("click", this.onShowAll);
+    eventBus.off(appEvents.changeCountry, this.onChangeCountry);
   }
 
   render() {
@@ -69,92 +82,184 @@ export class Destinations extends Component {
                     <h1>Perfect Tour Destinations</h1>
                 </div>
                 <div class="row">
+                  <travel-subnavigation></travel-subnavigation>
                     ${
                       this.state.destinations.length > 0
                         ? `
-                          ${
-                            this.state.isShowedAll
-                              ? `
-                              ${this.state.destinations
-                                .map(
-                                  ({
-                                    title,
-                                    duration,
-                                    persons,
-                                    price,
-                                    rating,
-                                    poster,
-                                    country,
-                                    description,
-                                    id,
-                                  }) => {
-                                    return `
-                              <destination-card
-                                  title="${title}"
-                                  duration="${duration}"
-                                  description="${description}"
-                                  persons="${persons}"
-                                  price="${price}"
-                                  rating="${rating}"
-                                  poster="${poster}"
-                                  country="${country
-                                    .split("")
-                                    .map((item, index) =>
-                                      index === 0 ? item.toUpperCase() : item
+                          ${!(this.state.activeCountry === "all")
+                            ? `
+                              ${
+                                this.state.isShowedAll
+                                  ? `
+                                  ${this.state.destinations
+                                    .filter((item) => item.country === this.state.activeCountry)
+                                    .map(
+                                      ({
+                                        title,
+                                        duration,
+                                        persons,
+                                        price,
+                                        rating,
+                                        poster,
+                                        country,
+                                        description,
+                                        id,
+                                      }) => {
+                                        return `
+                                  <destination-card
+                                      title="${title}"
+                                      duration="${duration}"
+                                      description="${description}"
+                                      persons="${persons}"
+                                      price="${price}"
+                                      rating="${rating}"
+                                      poster="${poster}"
+                                      country="${country
+                                        .split("")
+                                        .map((item, index) =>
+                                          index === 0 ? item.toUpperCase() : item
+                                        )
+                                        .join("")}"
+                                      id="${id}"
+                                      class="col-lg-4 col-md-6 mb-4"
+                                  >
+                                  </destination-card>
+                                  `;
+                                      }
                                     )
-                                    .join("")}"
-                                  id="${id}"
-                                  class="col-lg-4 col-md-6 mb-4"
-                              >
-                              </destination-card>
-                              `;
-                                  }
-                                )
-                                .join(" ")}
-                            `
-                              : `
-                              ${this.state.destinations
-                                .slice(0, 3)
-                                .map(
-                                  ({
-                                    title,
-                                    duration,
-                                    persons,
-                                    price,
-                                    rating,
-                                    poster,
-                                    country,
-                                    description,
-                                    id,
-                                  }) => {
-                                    return `
-                              <destination-card
-                                  title="${title}"
-                                  duration="${duration}"
-                                  description="${description}"
-                                  persons="${persons}"
-                                  price="${price}"
-                                  rating="${rating}"
-                                  poster="${poster}"
-                                  country="${country
-                                    .split("")
-                                    .map((item, index) =>
-                                      index === 0 ? item.toUpperCase() : item
+                                    .join(" ")}
+                                `
+                                  : `
+                                  ${this.state.destinations
+                                    .filter((item) => item.country === this.state.activeCountry)
+                                    .slice(0, 3)
+                                    .map(
+                                      ({
+                                        title,
+                                        duration,
+                                        persons,
+                                        price,
+                                        rating,
+                                        poster,
+                                        country,
+                                        description,
+                                        id,
+                                      }) => {
+                                        return `
+                                  <destination-card
+                                      title="${title}"
+                                      duration="${duration}"
+                                      description="${description}"
+                                      persons="${persons}"
+                                      price="${price}"
+                                      rating="${rating}"
+                                      poster="${poster}"
+                                      country="${country
+                                        .split("")
+                                        .map((item, index) =>
+                                          index === 0 ? item.toUpperCase() : item
+                                        )
+                                        .join("")}"
+                                      id="${id}"
+                                      class="col-lg-4 col-md-6 mb-4"
+                                  >
+                                  </destination-card>
+                                  `;
+                                      }
                                     )
-                                    .join("")}"
-                                  id="${id}"
-                                  class="col-lg-4 col-md-6 mb-4"
-                              >
-                              </destination-card>
-                              `;
-                                  }
-                                )
-                                .join(" ")}
-                              <div class="d-flex justify-content-center">
-                                <button class="px-4 btn btn-primary text-center see-all"><a href="" class="text-white">See all</a></button>
-                              </div>
+                                    .join(" ")}
+                                  <div class="d-flex justify-content-center">
+                                    <button class="px-4 btn btn-primary text-center see-all"><a href="" class="text-white">See all</a></button>
+                                  </div>
+                                `
+                              }
                             `
-                          }    
+                            : `
+                              ${
+                                this.state.isShowedAll
+                                  ? `
+                                  ${this.state.destinations
+                                    .map(
+                                      ({
+                                        title,
+                                        duration,
+                                        persons,
+                                        price,
+                                        rating,
+                                        poster,
+                                        country,
+                                        description,
+                                        id,
+                                      }) => {
+                                        return `
+                                  <destination-card
+                                      title="${title}"
+                                      duration="${duration}"
+                                      description="${description}"
+                                      persons="${persons}"
+                                      price="${price}"
+                                      rating="${rating}"
+                                      poster="${poster}"
+                                      country="${country
+                                        .split("")
+                                        .map((item, index) =>
+                                          index === 0 ? item.toUpperCase() : item
+                                        )
+                                        .join("")}"
+                                      id="${id}"
+                                      class="col-lg-4 col-md-6 mb-4"
+                                  >
+                                  </destination-card>
+                                  `;
+                                      }
+                                    )
+                                    .join(" ")}
+                                `
+                                  : `
+                                  ${this.state.destinations
+                                    .slice(0, 3)
+                                    .map(
+                                      ({
+                                        title,
+                                        duration,
+                                        persons,
+                                        price,
+                                        rating,
+                                        poster,
+                                        country,
+                                        description,
+                                        id,
+                                      }) => {
+                                        return `
+                                  <destination-card
+                                      title="${title}"
+                                      duration="${duration}"
+                                      description="${description}"
+                                      persons="${persons}"
+                                      price="${price}"
+                                      rating="${rating}"
+                                      poster="${poster}"
+                                      country="${country
+                                        .split("")
+                                        .map((item, index) =>
+                                          index === 0 ? item.toUpperCase() : item
+                                        )
+                                        .join("")}"
+                                      id="${id}"
+                                      class="col-lg-4 col-md-6 mb-4"
+                                  >
+                                  </destination-card>
+                                  `;
+                                      }
+                                    )
+                                    .join(" ")}
+                                  <div class="d-flex justify-content-center">
+                                    <button class="px-4 btn btn-primary text-center see-all"><a href="" class="text-white">See all</a></button>
+                                  </div>
+                                `
+                              }
+                            `  
+                          }      
                         `
                         : "<h2>Destinations is not available</h2>"
                     }
