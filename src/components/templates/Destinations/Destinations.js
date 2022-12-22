@@ -68,9 +68,6 @@ export class Destinations extends Component {
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destinations</h6>
                     <h1>Perfect Tour Destinations</h1>
                 </div>
-                <div class="head">
-                  <p class="text-right see-all"><a href="">See all</a></p>
-                </div>
                 <div class="row">
                     ${
                       this.state.destinations.length > 0
@@ -153,6 +150,9 @@ export class Destinations extends Component {
                                   }
                                 )
                                 .join(" ")}
+                              <div class="d-flex justify-content-center">
+                                <button class="px-4 btn btn-primary text-center see-all"><a href="" class="text-white">See all</a></button>
+                              </div>
                             `
                           }    
                         `
