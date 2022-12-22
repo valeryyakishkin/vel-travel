@@ -35,7 +35,7 @@ export class Feature extends Component {
                                 </div>
                                 <div class="d-flex flex-column">
                                     <h5 class="">Worldwide Coverage</h5>
-                                    <p class="m-0">We focus on a potential audience in order to attract as many satisfied customers as possible</p>
+                                    <p class="m-0">We on a potential audience in order to attract as many satisfied as possible</p>
                                 </div>
                             </div>
                         </div>
