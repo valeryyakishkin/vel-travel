@@ -100,7 +100,12 @@ export class Destinations extends Component {
                                   price="${price}"
                                   rating="${rating}"
                                   poster="${poster}"
-                                  country="${country}"
+                                  country="${country
+                                    .split("")
+                                    .map((item, index) =>
+                                      index === 0 ? item.toUpperCase() : item
+                                    )
+                                    .join("")}"
                                   id="${id}"
                                   class="col-lg-4 col-md-6 mb-4"
                               >
@@ -134,7 +139,12 @@ export class Destinations extends Component {
                                   price="${price}"
                                   rating="${rating}"
                                   poster="${poster}"
-                                  country="${country}"
+                                  country="${country
+                                    .split("")
+                                    .map((item, index) =>
+                                      index === 0 ? item.toUpperCase() : item
+                                    )
+                                    .join("")}"
                                   id="${id}"
                                   class="col-lg-4 col-md-6 mb-4"
                               >

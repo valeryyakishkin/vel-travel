@@ -117,7 +117,10 @@ export class PackageDetails extends core.Component {
 
   componentWillUnmount() {
     eventBus.off(appEvents.validateControls, this.validate);
-    this.removeEventListener("submit", this.form.handleSubmit(this.createRequest));
+    this.removeEventListener(
+      "submit",
+      this.form.handleSubmit(this.createRequest)
+    );
   }
 
   render() {
@@ -146,7 +149,12 @@ export class PackageDetails extends core.Component {
                   </tr>
                   <tr>
                     <td>Country:</td>
-                    <td>${this.state.destination.country}</td>
+                    <td>${this.state.destination.country
+                      .split("")
+                      .map((item, index) =>
+                        index === 0 ? item.toUpperCase() : item
+                      )
+                      .join("")}</td>
                   </tr>
                   <tr>
                     <td>Rating:</td>
@@ -192,7 +200,9 @@ export class PackageDetails extends core.Component {
                     <div class="col-6 d-flex justify-content-around">
                       <button type="sumbit" class="btn btn-primary btn-lg mr-2 p-2">Book now</button>
                       <button type="button" class="btn btn-secondary btn-lg p-2 mr-2">
-                        <travel-link to="${appRoutes.destinations}">Back to destinations</travel-link>
+                        <travel-link to="${
+                          appRoutes.destinations
+                        }">Back to destinations</travel-link>
                       </button>
                     </div>
                   </form>
