@@ -9,7 +9,7 @@ export class Carousel extends core.Component {
             <div class="container-fluid p-0 position-relative" style="top: -50px;">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="10000">
+                        <div class="carousel-item active" data-bs-interval="5000">
                             <img class="w-100" src="../../../assets/images/carousel-1.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 900px;">
@@ -21,7 +21,7 @@ export class Carousel extends core.Component {
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item" data-bs-interval="20000">
+                        <div class="carousel-item" data-bs-interval="5000">
                             <img class="w-100" src="../../../assets/images/carousel-2.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 900px;">
