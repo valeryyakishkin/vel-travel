@@ -33,7 +33,7 @@ export class SubNavigation extends Component {
   render() {
     return `
             <div class="sub-navigation row">
-                <ul class="flex-md-row flex-lg-row flex-sm-column flex-wrap">
+                <ul>
                     ${appCountries
                       .map((item) => {
                         return `
